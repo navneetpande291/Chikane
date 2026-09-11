@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicane — Find your line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="siteNav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top"><span class="logo-mark"></span>Chicane</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#garage">Garage</a>
+      <a href="#circuits">Circuits</a>
+      <a href="#modes">Modes</a>
+      <a href="#release">Release</a>
+    </nav>
+    <a class="btn btn-outline nav-cta clip-chicane-sm" href="#release">Wishlist</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="container nav-mobile" id="navMobile">
+    <a href="#garage">Garage</a>
+    <a href="#circuits">Circuits</a>
+    <a href="#modes">Modes</a>
+    <a href="#release">Release</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-stripe" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-title">Chicane</h1>
+        <p class="hero-tagline">A racing game about the six seconds before the apex — the moment the corner is won or lost.</p>
+        <p class="hero-sub">Forty-two circuits across coast, mountain and city. No assists, no rubber-banding. Just you, the tyres, and the line you choose to take.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary clip-chicane-sm" id="trailerBtn">Watch the reveal trailer</button>
+          <a class="btn btn-outline clip-chicane-sm" href="#release">Wishlist on Steam</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt data-count="42">0</dt><dd>circuits</dd></div>
+          <div><dt data-count="180" data-suffix="+">0</dt><dd>tuning parts</dd></div>
+          <div><dt data-count="16">0</dt><dd>car grid</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
+          <path class="track-path" d="M60,220 C60,140 120,80 220,80 L300,80 C320,80 330,70 345,70 C365,70 375,85 365,100 C355,115 335,110 330,125 C325,140 345,150 365,150 C420,150 460,190 460,240 C460,300 410,340 350,340 L180,340 C120,340 60,300 60,220 Z"/>
+          <path class="track-path draw" d="M60,220 C60,140 120,80 220,80 L300,80 C320,80 330,70 345,70 C365,70 375,85 365,100 C355,115 335,110 330,125 C325,140 345,150 365,150 C420,150 460,190 460,240 C460,300 410,340 350,340 L180,340 C120,340 60,300 60,220 Z"/>
+          <text class="track-label" x="378" y="98">TURN 7 — THE CHICANE</text>
+          <circle class="track-dot" r="5">
+            <animateMotion dur="9s" repeatCount="indefinite" path="M60,220 C60,140 120,80 220,80 L300,80 C320,80 330,70 345,70 C365,70 375,85 365,100 C355,115 335,110 330,125 C325,140 345,150 365,150 C420,150 460,190 460,240 C460,300 410,340 350,340 L180,340 C120,340 60,300 60,220 Z"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY / RACING LINE -->
+  <section id="philosophy">
+    <div class="container philosophy-inner">
+      <div class="philosophy-text">
+        <h2>The line is everything</h2>
+        <p>Chicane's handling model is built around one idea: every corner has a line, and only one of them is fast. Late braking, an early apex, a greedy throttle — each costs you time somewhere else on the lap.</p>
+        <p>Tyres wear per compound and per corner. Tracks evolve as rubber goes down across a session. There's no rewind, no racing line overlay, and no assist that finds the apex for you.</p>
+      </div>
+      <div class="corner-diagram-panel clip-chicane-lg">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <path class="road-fill" d="M60,280 L60,160 C60,90 100,50 170,50 L380,50 L380,110 L210,110 C150,110 120,130 120,200 L120,280 Z"/>
+          <rect class="throttle-zone" x="200" y="50" width="180" height="60"/>
+          <line class="brake-tick" x1="82" y1="250" x2="98" y2="250"/>
+          <text class="brake-label" x="30" y="254">300M</text>
+          <line class="brake-tick" x1="82" y1="215" x2="98" y2="215"/>
+          <text class="brake-label" x="30" y="219">200M</text>
+          <line class="brake-tick" x1="82" y1="180" x2="98" y2="180"/>
+          <text class="brake-label" x="30" y="184">100M</text>
+          <path class="line-path" d="M76,280 C76,210 84,165 118,148 C160,127 190,112 220,105 C270,92 320,80 380,77"/>
+          <circle class="moving-dot" r="5">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M76,280 C76,210 84,165 118,148 C160,127 190,112 220,105 C270,92 320,80 380,77"/>
+          </circle>
+          <circle class="marker-dot" cx="92" cy="170" r="4"/>
+          <text class="marker-label" x="102" y="174">Turn-in</text>
+          <circle class="marker-dot apex" cx="128" cy="132" r="6"/>
+          <text class="marker-label apex-label" x="140" y="130">Apex</text>
+          <circle class="marker-dot" cx="300" cy="83" r="4"/>
+          <text class="marker-label" x="300" y="70">Full throttle</text>
+        </svg>
+        <div class="diagram-caption">
+          <span>SECTOR 2 — TURN 7</span>
+          <span>ENTRY 96 KM/H</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARAGE -->
+  <section class="section-alt" id="garage">
+    <div class="container">
+      <div class="section-head">
+        <h2>Six cars. Six philosophies.</h2>
+        <p>Every car in Chicane is built around a single idea, not a stat sheet. Pick a philosophy, not just a shape.</p>
+      </div>
+      <div class="car-carousel">
+        <button class="car-nav" id="carPrev" aria-label="Scroll to previous car">‹</button>
+        <div class="car-track" id="carTrack">
+
+          <article class="car-card clip-chicane-lg" style="--car-color:var(--amber-500)">
+            <svg class="car-silhouette" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--amber-500)" d="M10,55 C10,40 25,35 40,33 L70,20 C85,12 110,12 125,18 L160,30 C175,33 185,40 190,50 L190,58 C190,62 186,64 182,64 L165,64 C165,50 153,40 140,40 C127,40 115,50 115,64 L85,64 C85,50 73,40 60,40 C47,40 35,50 35,64 L15,64 C11,64 10,60 10,55 Z"/>
+              <circle cx="60" cy="64" r="13" fill="var(--asphalt-900)"/><circle cx="140" cy="64" r="13" fill="var(--asphalt-900)"/>
+            </svg>
+            <p class="car-class">Grand Tourer</p>
+            <h3 class="car-name">Sabre GT</h3>
+            <p class="car-blurb">Built for the long straight and the patient overtake.</p>
+            <div class="car-stats">
+              <div class="car-stat-row">Top speed<div class="car-stat-bar"><div class="car-stat-fill" style="width:90%"></div></div></div>
+              <div class="car-stat-row">Accel<div class="car-stat-bar"><div class="car-stat-fill" style="width:70%"></div></div></div>
+              <div class="car-stat-row">Handling<div class="car-stat-bar"><div class="car-stat-fill" style="width:75%"></div></div></div>
+              <div class="car-stat-row">Drift<div class="car-stat-bar"><div class="car-stat-fill" style="width:40%"></div></div></div>
+            </div>
+          </article>
+
+          <article class="car-card clip-chicane-lg" style="--car-color:var(--ice-400)">
+            <svg class="car-silhouette" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--ice-400)" d="M10,55 C10,40 25,35 40,33 L70,20 C85,12 110,12 125,18 L160,30 C175,33 185,40 190,50 L190,58 C190,62 186,64 182,64 L165,64 C165,50 153,40 140,40 C127,40 115,50 115,64 L85,64 C85,50 73,40 60,40 C47,40 35,50 35,64 L15,64 C11,64 10,60 10,55 Z"/>
+              <circle cx="60" cy="64" r="13" fill="var(--asphalt-900)"/><circle cx="140" cy="64" r="13" fill="var(--asphalt-900)"/>
+            </svg>
+            <p class="car-class">Hypercar</p>
+            <h3 class="car-name">Obsidian 900</h3>
+            <p class="car-blurb">All downforce, no mercy. Needs a driver who trusts it.</p>
+            <div class="car-stats">
+              <div class="car-stat-row">Top speed<div class="car-stat-bar"><div class="car-stat-fill" style="width:98%"></div></div></div>
+              <div class="car-stat-row">Accel<div class="car-stat-bar"><div class="car-stat-fill" style="width:95%"></div></div></div>
+              <div class="car-stat-row">Handling<div class="car-stat-bar"><div class="car-stat-fill" style="width:80%"></div></div></div>
+              <div class="car-stat-row">Drift<div class="car-stat-bar"><div class="car-stat-fill" style="width:55%"></div></div></div>
+            </div>
+          </article>
+
+          <article class="car-card clip-chicane-lg" style="--car-color:var(--amber-500)">
+            <svg class="car-silhouette" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--amber-500)" d="M10,55 C10,40 25,35 40,33 L70,20 C85,12 110,12 125,18 L160,30 C175,33 185,40 190,50 L190,58 C190,62 186,64 182,64 L165,64 C165,50 153,40 140,40 C127,40 115,50 115,64 L85,64 C85,50 73,40 60,40 C47,40 35,50 35,64 L15,64 C11,64 10,60 10,55 Z"/>
+              <circle cx="60" cy="64" r="13" fill="var(--asphalt-900)"/><circle cx="140" cy="64" r="13" fill="var(--asphalt-900)"/>
+            </svg>
+            <p class="car-class">Rally-cross</p>
+            <h3 class="car-name">Kestrel Mk2</h3>
+            <p class="car-blurb">At home on gravel, tarmac, or somewhere in between.</p>
+            <div class="car-stats">
+              <div class="car-stat-row">Top speed<div class="car-stat-bar"><div class="car-stat-fill" style="width:60%"></div></div></div>
+              <div class="car-stat-row">Accel<div class="car-stat-bar"><div class="car-stat-fill" style="width:80%"></div></div></div>
+              <div class="car-stat-row">Handling<div class="car-stat-bar"><div class="car-stat-fill" style="width:90%"></div></div></div>
+              <div class="car-stat-row">Drift<div class="car-stat-bar"><div class="car-stat-fill" style="width:70%"></div></div></div>
+            </div>
+          </article>
+
+          <article class="car-card clip-chicane-lg" style="--car-color:var(--ice-400)">
+            <svg class="car-silhouette" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--ice-400)" d="M10,55 C10,40 25,35 40,33 L70,20 C85,12 110,12 125,18 L160,30 C175,33 185,40 190,50 L190,58 C190,62 186,64 182,64 L165,64 C165,50 153,40 140,40 C127,40 115,50 115,64 L85,64 C85,50 73,40 60,40 C47,40 35,50 35,64 L15,64 C11,64 10,60 10,55 Z"/>
+              <circle cx="60" cy="64" r="13" fill="var(--asphalt-900)"/><circle cx="140" cy="64" r="13" fill="var(--asphalt-900)"/>
+            </svg>
+            <p class="car-class">Drift Special</p>
+            <h3 class="car-name">Ember Type-4</h3>
+            <p class="car-blurb">Set up to slide, not grip. The throttle is the steering wheel.</p>
+            <div class="car-stats">
+              <div class="car-stat-row">Top speed<div class="car-stat-bar"><div class="car-stat-fill" style="width:65%"></div></div></div>
+              <div class="car-stat-row">Accel<div class="car-stat-bar"><div class="car-stat-fill" style="width:75%"></div></div></div>
+              <div class="car-stat-row">Handling<div class="car-stat-bar"><div class="car-stat-fill" style="width:60%"></div></div></div>
+              <div class="car-stat-row">Drift<div class="car-stat-bar"><div class="car-stat-fill" style="width:99%"></div></div></div>
+            </div>
+          </article>
+
+          <article class="car-card clip-chicane-lg" style="--car-color:var(--amber-500)">
+            <svg class="car-silhouette" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--amber-500)" d="M10,55 C10,40 25,35 40,33 L70,20 C85,12 110,12 125,18 L160,30 C175,33 185,40 190,50 L190,58 C190,62 186,64 182,64 L165,64 C165,50 153,40 140,40 C127,40 115,50 115,64 L85,64 C85,50 73,40 60,40 C47,40 35,50 35,64 L15,64 C11,64 10,60 10,55 Z"/>
+              <circle cx="60" cy="64" r="13" fill="var(--asphalt-900)"/><circle cx="140" cy="64" r="13" fill="var(--asphalt-900)"/>
+            </svg>
+            <p class="car-class">Classic Touring</p>
+            <h3 class="car-name">Marlow 62</h3>
+            <p class="car-blurb">A silhouette racer from another decade, reborn on modern tyres.</p>
+            <div class="car-stats">
+              <div class="car-stat-row">Top speed<div class="car-stat-bar"><div class="car-stat-fill" style="width:70%"></div></div></div>
+              <div class="car-stat-row">Accel<div class="car-stat-bar"><div class="car-stat-fill" style="width:55%"></div></div></div>
+              <div class="car-stat-row">Handling<div class="car-stat-bar"><div class="car-stat-fill" style="width:65%"></div></div></div>
+              <div class="car-stat-row">Drift<div class="car-stat-bar"><div class="car-stat-fill" style="width:45%"></div></div></div>
+            </div>
+          </article>
+
+          <article class="car-card clip-chicane-lg" style="--car-color:var(--ice-400)">
+            <svg class="car-silhouette" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--ice-400)" d="M10,55 C10,40 25,35 40,33 L70,20 C85,12 110,12 125,18 L160,30 C175,33 185,40 190,50 L190,58 C190,62 186,64 182,64 L165,64 C165,50 153,40 140,40 C127,40 115,50 115,64 L85,64 C85,50 73,40 60,40 C47,40 35,50 35,64 L15,64 C11,64 10,60 10,55 Z"/>
+              <circle cx="60" cy="64" r="13" fill="var(--asphalt-900)"/><circle cx="140" cy="64" r="13" fill="var(--asphalt-900)"/>
+            </svg>
+            <p class="car-class">Endurance</p>
+            <h3 class="car-name">Sentinel V12</h3>
+            <p class="car-blurb">Tuned to survive twenty-four hours, not just twenty-four seconds.</p>
+            <div class="car-stats">
+              <div class="car-stat-row">Top speed<div class="car-stat-bar"><div class="car-stat-fill" style="width:85%"></div></div></div>
+              <div class="car-stat-row">Accel<div class="car-stat-bar"><div class="car-stat-fill" style="width:65%"></div></div></div>
+              <div class="car-stat-row">Handling<div class="car-stat-bar"><div class="car-stat-fill" style="width:85%"></div></div></div>
+              <div class="car-stat-row">Drift<div class="car-stat-bar"><div class="car-stat-fill" style="width:50%"></div></div></div>
+            </div>
+          </article>
+
+        </div>
+        <button class="car-nav" id="carNext" aria-label="Scroll to next car">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIRCUITS -->
+  <section id="circuits">
+    <div class="container">
+      <div class="section-head">
+        <h2>Five circuits at launch</h2>
+        <p>Real elevation, real weather, and a layout philosophy borrowed from the world's hardest road courses.</p>
+      </div>
+      <ul class="circuit-list">
+
+        <li class="circuit-row">
+          <div><h3 class="circuit-name">Solano Bay</h3><p class="circuit-tag">Coastal</p></div>
+          <div class="circuit-meta">5.4 km<span>Length</span></div>
+          <div class="circuit-meta">14<span>Turns</span></div>
+          <p class="circuit-blurb">Fast and flowing, until the unforgiving final chicane.</p>
+          <svg viewBox="0 0 100 30" width="100" height="30"><polyline class="circuit-spark" points="0,22 15,10 30,18 45,6 60,14 75,4 100,12"/></svg>
+        </li>
+
+        <li class="circuit-row">
+          <div><h3 class="circuit-name">Cinder Ridge</h3><p class="circuit-tag">Desert · Night</p></div>
+          <div class="circuit-meta">6.1 km<span>Length</span></div>
+          <div class="circuit-meta">11<span>Turns</span></div>
+          <p class="circuit-blurb">Blind crests and a two-kilometre straight under floodlights.</p>
+          <svg viewBox="0 0 100 30" width="100" height="30"><polyline class="circuit-spark" points="0,8 15,20 30,10 45,24 60,16 75,26 100,18"/></svg>
+        </li>
+
+        <li class="circuit-row">
+          <div><h3 class="circuit-name">Talvera Pass</h3><p class="circuit-tag">Mountain</p></div>
+          <div class="circuit-meta">7.8 km<span>Length</span></div>
+          <div class="circuit-meta">22<span>Turns</span></div>
+          <p class="circuit-blurb">The longest circuit in the game, and the one drivers fear most.</p>
+          <svg viewBox="0 0 100 30" width="100" height="30"><polyline class="circuit-spark" points="0,26 15,18 30,22 45,8 60,12 75,2 100,10"/></svg>
+        </li>
+
+        <li class="circuit-row">
+          <div><h3 class="circuit-name">Meridian Docks</h3><p class="circuit-tag">Urban Street</p></div>
+          <div class="circuit-meta">4.2 km<span>Length</span></div>
+          <div class="circuit-meta">18<span>Turns</span></div>
+          <p class="circuit-blurb">Concrete walls, tram tracks, and zero run-off anywhere.</p>
+          <svg viewBox="0 0 100 30" width="100" height="30"><polyline class="circuit-spark" points="0,14 15,16 30,12 45,18 60,10 75,20 100,14"/></svg>
+        </li>
+
+        <li class="circuit-row">
+          <div><h3 class="circuit-name">Harrow Moor</h3><p class="circuit-tag">Mixed Surface</p></div>
+          <div class="circuit-meta">3.6 km<span>Length</span></div>
+          <div class="circuit-meta">12<span>Turns</span></div>
+          <p class="circuit-blurb">Half tarmac, half gravel, entirely chaotic by the last lap.</p>
+          <svg viewBox="0 0 100 30" width="100" height="30"><polyline class="circuit-spark" points="0,10 15,24 30,14 45,20 60,6 75,16 100,8"/></svg>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section class="section-alt" id="modes">
+    <div class="container">
+      <div class="section-head">
+        <h2>Four ways to race</h2>
+        <p>Same physics, same tyres, different pressure.</p>
+      </div>
+      <div class="modes-grid">
+
+        <div class="mode-card clip-chicane-sm">
+          <svg class="mode-icon" viewBox="0 0 24 24"><path d="M5 3v18M5 4h13l-2 4 2 4H5"/></svg>
+          <h3>Career</h3>
+          <p>Climb from club racing to the top division across three fictional seasons.</p>
+        </div>
+
+        <div class="mode-card clip-chicane-sm">
+          <svg class="mode-icon" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6M12 2v3"/></svg>
+          <h3>Time Attack</h3>
+          <p>Beat the ghost, beat the clock, beat yourself.</p>
+        </div>
+
+        <div class="mode-card clip-chicane-sm">
+          <svg class="mode-icon" viewBox="0 0 24 24"><path d="M3 17c4-1 5-6 9-6s5 5 9 6M3 20c4-1 5-6 9-6s5 5 9 6"/></svg>
+          <h3>Drift Zones</h3>
+          <p>Judged corners, scored on angle and speed. Style over speed.</p>
+        </div>
+
+        <div class="mode-card clip-chicane-sm">
+          <svg class="mode-icon" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M6 8.4v7.2M18 8.4v7.2M8.4 6h7.2M8.4 18h7.2"/></svg>
+          <h3>Online Grid</h3>
+          <p>Sixteen-car lobbies, full damage, no forgiveness.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="hazard-strip" aria-hidden="true"></div>
+
+  <!-- PRESS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Early word</h2>
+      </div>
+      <div class="press-inner">
+        <div class="press-card">
+          <p class="press-quote">Chicane makes every corner feel like a decision, not a formality.</p>
+          <p class="press-source">Pixel &amp; Piston</p>
+        </div>
+        <div class="press-card">
+          <p class="press-quote">The rare racer that punishes impatience without ever feeling unfair.</p>
+          <p class="press-source">Nightshift Gaming</p>
+        </div>
+        <div class="press-card">
+          <p class="press-quote">A love letter to the corner, not just the car.</p>
+          <p class="press-source">Drift Culture Weekly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELEASE -->
+  <section class="release section-alt" id="release">
+    <div class="container release-inner">
+      <h2>Coming to the grid in 2027</h2>
+      <p>Chicane launches on PC, PlayStation 5 and Xbox Series X|S. Wishlist now for the launch livery pack.</p>
+      <form class="release-form" id="releaseForm">
+        <input type="email" required placeholder="you@email.com" aria-label="Email address">
+        <button class="btn btn-primary clip-chicane-sm" type="submit">Get release updates</button>
+      </form>
+      <p class="release-note" id="releaseNote" aria-live="polite"></p>
+      <p class="release-platforms">PC · PLAYSTATION 5 · XBOX SERIES X|S</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a class="logo" href="#top"><span class="logo-mark"></span>Chicane</a>
+      <div class="footer-links">
+        <a href="#garage">Garage</a>
+        <a href="#circuits">Circuits</a>
+        <a href="#modes">Modes</a>
+        <a href="#release">Release</a>
+        <a href="#top">Press kit</a>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="padding:0;">
+      <span>© 2027 Chicane Studios. A fictional game.</span>
+      <span>Find your line.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- TRAILER MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal clip-chicane-lg" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 id="modalTitle">Reveal trailer</h3>
+    <p>The full reveal drops with the announcement. Until then, here's the pole-position lap at Talvera Pass — twenty-two turns, one shot.</p>
+    <div class="modal-frame">
+      <svg viewBox="0 0 200 100" width="140">
+        <path fill="none" stroke="var(--amber-500)" stroke-width="3" d="M20,80 C20,40 60,20 100,20 C140,20 180,40 180,70"/>
+      </svg>
+      <div class="hazard-strip"></div>
+    </div>
+    <button class="btn btn-outline clip-chicane-sm modal-close" id="modalClose">Close</button>
+  </div>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const nav = document.getElementById('siteNav');
+  const navToggle = document.getElementById('navToggle');
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Car carousel
+  const carTrack = document.getElementById('carTrack');
+  const cardWidth = 320;
+  document.getElementById('carPrev').addEventListener('click', () => {
+    carTrack.scrollBy({left: -cardWidth, behavior: 'smooth'});
+  });
+  document.getElementById('carNext').addEventListener('click', () => {
+    carTrack.scrollBy({left: cardWidth, behavior: 'smooth'});
+  });
+
+  // Hero stat count-up
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.hero-stats dt').forEach(el => {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    if (reduceMotion) { el.textContent = target + suffix; return; }
+    let start = null;
+    const duration = 1200;
+    function step(ts){
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.floor(progress * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    setTimeout(() => requestAnimationFrame(step), 700);
+  });
+
+  // Trailer modal
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const trailerBtn = document.getElementById('trailerBtn');
+  const modalClose = document.getElementById('modalClose');
+  function openModal(){
+    modalBackdrop.classList.add('open');
+    modalClose.focus();
+  }
+  function closeModal(){
+    modalBackdrop.classList.remove('open');
+    trailerBtn.focus();
+  }
+  trailerBtn.addEventListener('click', openModal);
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) closeModal(); });
+
+  // Release form (demo only, no backend)
+  const releaseForm = document.getElementById('releaseForm');
+  const releaseNote = document.getElementById('releaseNote');
+  releaseForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    releaseNote.textContent = "You're on the list. We'll email you at launch.";
+    releaseForm.reset();
+  });
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
